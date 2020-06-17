@@ -1,0 +1,194 @@
+<!-- пиздатенько смотрится, не правда ли?) -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Информатика > doege2020</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+        <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
+        <link rel="manifest" href="/icon/site.webmanifest">
+	</head>
+
+	<body>
+		<section class="section">
+			<div class="container has-text-centered">
+			<h1 class="title">
+        ЕГЭ 2020
+        <br>
+        <div class="dropdown is-hoverable" style="margin-top: 20px;">
+          <div class="dropdown-trigger">
+            <button class="button is-info" aria-haspopup="true" aria-controls="dropdown-menu4">
+              <span>Информатика</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+              <a href="math" class="dropdown-item">
+                Математика
+              </a>
+              <a href="rus" class="dropdown-item">
+                Русский язык
+              </a>
+              <a href="info" class="dropdown-item is-active" style="background-color: hsl(204, 86%, 53%);">
+                Информатика
+              </a>
+              <a href="phys" class="dropdown-item">
+                Физика
+              </a>
+              <a href="bio" class="dropdown-item">
+                Биология
+              </a>
+              <a href="soc" class="dropdown-item">
+                Обществознание
+              </a>
+              <a href="chem" class="dropdown-item">
+                Химия
+              </a>
+              <a href="lit" class="dropdown-item">
+                Литература
+              </a>
+              <a href="history" class="dropdown-item">
+                История
+              </a>
+              <a href="geo" class="dropdown-item">
+                География
+              </a>
+              <a href="lang" class="dropdown-item">
+                Ин. языки
+              </a>
+            </div>
+          </div>
+        </div>
+      </h1>
+      <br>
+			<h4 class="subtitle is-5">
+				до начала осталось
+      </h4>
+      
+            </div>
+        </section>
+        
+        <section>		
+    
+        <div class="container">
+            
+            <nav class="level is-mobile">
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Недель</p>
+                    <p class="title" id="countdown-weeks"></p>
+                  </div>
+                </div>
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Дней</p>
+                    <p class="title" id="countdown-days"></p>
+                  </div>
+                </div>
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Часов</p>
+                    <p class="title" id="countdown-hours"></p>
+                  </div>
+                </div>
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Минут</p>
+                    <p class="title" id="countdown-minutes"></p>
+                  </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                      <p class="heading">Секунд</p>
+                      <p class="title" id="countdown-seconds"></p>
+                    </div>
+                  </div>
+              </nav>
+
+        </div>
+    
+    </section>
+
+    <section class="section">
+        <div class="container has-text-centered">
+            <progress class="progress is-info" id="egeprogress" value="45" max="100">45%</progress>
+        </div>
+    </section>
+
+    </body>
+
+
+  	<script>
+
+    var startDate = new Date("May 25, 2020 10:00:00").getTime();    
+	var countDownDate = new Date("July 3, 2020 10:00:00").getTime();
+
+    var delta_startdown = countDownDate - startDate;
+
+    //console.log(delta_startdown);
+
+	clockege();
+
+	function clockege() {
+
+		var now = new Date().getTime();
+	    
+        var distance = countDownDate - now;
+
+        if (distance <= 0) {
+            document.getElementById("countdown-weeks").innerHTML = 0; 
+            document.getElementById("countdown-days").innerHTML = 0; 
+            document.getElementById("countdown-hours").innerHTML = 0; 
+            document.getElementById("countdown-minutes").innerHTML = 0; 
+            document.getElementById("countdown-seconds").innerHTML = 0; 
+
+            document.getElementById("egeprogress").value = 100;
+        }
+				
+        else{
+
+            var progress = (now - startDate)/delta_startdown;
+
+            document.getElementById("egeprogress").value = progress*100;
+
+            //console.log(progress.toFixed(3))
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var weeks = Math.floor(days / 7);
+            days = days - weeks * 7;
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            var milliseconds = Math.floor((distance % (1000 * 60)));
+
+            var deltaMilliseconds = milliseconds - seconds*1000;
+
+            document.getElementById("countdown-weeks").innerHTML = weeks; 
+            document.getElementById("countdown-days").innerHTML = days; 
+            document.getElementById("countdown-hours").innerHTML = hours; 
+            document.getElementById("countdown-minutes").innerHTML = minutes; 
+            document.getElementById("countdown-seconds").innerHTML = seconds; 
+        }
+
+		window.setTimeout('clockege()', 1);
+	}
+
+  </script>
+  
+  <style>
+
+    .is-active {
+      background-color: black;
+    }
+
+  </style>
+
+</html>
