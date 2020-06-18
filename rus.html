@@ -73,7 +73,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Информатика > doege2020</title>
+		<title>Русский язык > doege2020</title>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
         <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
         <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png">
@@ -90,8 +90,8 @@
         <br>
         <div class="dropdown is-hoverable mt-5">
           <div class="dropdown-trigger">
-            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
-              <span>Информатика</span>
+            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4"">
+              <span>Русский язык</span>
               <span class="icon is-small">
                 <i class="fas fa-angle-down" aria-hidden="true"></i>
               </span>
@@ -102,10 +102,10 @@
               <a href="math" class="dropdown-item">
                 Математика
               </a>
-              <a href="rus" class="dropdown-item">
+              <a href="rus" class="dropdown-item  is-active" style="background-color: #FFCC33;">
                 Русский язык
               </a>
-              <a href="inf" class="dropdown-item is-active" style="background-color: hsl(204, 86%, 53%);">
+              <a href="inf" class="dropdown-item">
                 Информатика
               </a>
               <a href="phys" class="dropdown-item">
@@ -147,8 +147,13 @@
       <div class="tabs is-centered is-toggle is-toggle-rounded is-small">
         <ul>
           <li class="is-active">
-            <a style="cursor: default; border-color: hsl(204, 86%, 53%); background: hsl(204, 86%, 53%);">
-              <span>3 июля</span>
+            <a style="color: hsl(0, 0%, 0%); border-color: hsl(48, 100%, 67%); background: hsl(48, 100%, 67%); cursor: default;">
+              <span>6 июля</span>
+            </a>
+          </li>
+          <li>
+            <a href="rus7" style="cursor: pointer;">
+              <span>7 июля</span>
             </a>
           </li>
         </ul>
@@ -205,7 +210,7 @@
 
     <section class="section">
         <div class="container has-text-centered">
-            <progress class="progress is-info" id="egeprogress" value="45" max="100">45%</progress>
+            <progress class="progress is-warning" id="egeprogress" value="45" max="100">45%</progress>
         </div>
     </section>
 
@@ -220,7 +225,7 @@
           <div class="dropdown-menu" id="dropdown-menu" role="menu">
             <div class="dropdown-content">
               <div class="dropdown-item has-text-left">
-                <p>ЕГЭ по информатике в 2020 году состоится <br> <strong>3 июля</strong>.
+                <p>ЕГЭ по русскому языку в 2020 году проводится в два этапа - <strong>6 и 7 июля</strong>.
                 <br><br>
                 Подробнее <a href="https://4ege.ru/novosti-ege/58151-raspisanie-ege-i-oge-2020.html" target="_blank">здесь</a>
                 </p>
@@ -237,7 +242,7 @@
   	<script>
 
     var startDate = new Date("May 25, 2020 10:00:00").getTime();    
-	var countDownDate = new Date("July 3, 2020 10:00:00").getTime();
+	var countDownDate = new Date("July 6, 2020 10:00:00").getTime();
 
     var delta_startdown = countDownDate - startDate;
 
@@ -296,6 +301,8 @@
     #ege-question {
       cursor: pointer;
     }
+
+    progress { background: #FFCC33; }
 
 
   </style>

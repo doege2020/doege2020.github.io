@@ -1,4 +1,72 @@
-<!-- пиздатенько смотрится, не правда ли?) -->
+<!-- Иди ботай) -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!DOCTYPE html>
 <html>
@@ -6,7 +74,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Математика > doege2020</title>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
         <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
         <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
@@ -20,16 +88,16 @@
 			<h1 class="title">
         ЕГЭ 2020
         <br>
-        <div class="dropdown is-hoverable" style="margin-top: 20px;">
+        <div class="dropdown is-hoverable mt-5">
           <div class="dropdown-trigger">
-            <button class="button is-link" aria-haspopup="true" aria-controls="dropdown-menu4">
+            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
               <span>Математика</span>
               <span class="icon is-small">
                 <i class="fas fa-angle-down" aria-hidden="true"></i>
               </span>
             </button>
           </div>
-          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+          <div class="dropdown-menu has-text-left" id="dropdown-menu" role="menu">
             <div class="dropdown-content">
               <a href="math" class="dropdown-item is-active">
                 Математика
@@ -64,13 +132,31 @@
               <a href="lang" class="dropdown-item">
                 Ин. языки
               </a>
+                
+              <hr class="dropdown-divider">
+
+              <a href="about" class="dropdown-item has-text-weight-normal">
+                О сайте
+              </a>
+
             </div>
           </div>
         </div>
       </h1>
+
+      <div class="tabs is-centered is-toggle is-toggle-rounded is-small">
+        <ul>
+          <li class="is-active is-link">
+            <a style="cursor: default;">
+              <span>10 июля</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
       <br>
 			<h4 class="subtitle is-5">
-				до начала осталось
+        до начала осталось
       </h4>
       
             </div>
@@ -121,6 +207,28 @@
         <div class="container has-text-centered">
             <progress class="progress is-link" id="egeprogress" value="45" max="100">45%</progress>
         </div>
+    </section>
+
+    <section class="section">
+      <div class="container has-text-centered">
+        <div class="dropdown is-hoverable is-up">
+          <div class="dropdown-trigger">
+            <span class="icon is-large">
+              <i class="far fa-lg fa-question-circle" aria-hidden="true" id="ege-question"></i>
+            </span>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu7" role="menu">
+            <div class="dropdown-content">
+              <div class="dropdown-item has-text-left">
+                <p>ЕГЭ по профильной математике в 2020 году состоится <strong>10 июля</strong>. ЕГЭ по базовой математике в 2020 году не проводится. 
+                <br><br>
+                Подробнее <a href="https://4ege.ru/novosti-ege/58151-raspisanie-ege-i-oge-2020.html" target="_blank">здесь</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     </body>
@@ -185,9 +293,10 @@
   
   <style>
 
-    .is-active {
-      background-color: black;
+    #ege-question {
+      cursor: pointer;
     }
+
 
   </style>
 
