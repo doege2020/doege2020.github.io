@@ -1,3 +1,4 @@
+
 <!-- Иди ботай ) -->
 
 
@@ -73,7 +74,7 @@
 
 		<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Обратный отсчет до ЕГЭ 2020 по математике, русскому языку, физике, информатике">
+    <meta name="description" content="Обратный отсчет до ЕГЭ 2020 по математике">
     <meta name="keywords" content="до егэ по математике осталось, егэ 2020 по математике, егэ 2020 по математике профильный уровень, егэ 2020 по профильной математике, до егэ 2020 осталось заставка, до егэ 2020 осталось дней, сколько осталось до егэ 2020, сколько дней осталось до егэ 2020, до егэ осталось 2020, до егэ осталось, до егэ 2020, до егэ осталось дней, до огэ осталось счетчик, отсчет до егэ 2020, сколько до егэ 2020">
 		<title>ЕГЭ 2020 обратный отсчет > doege2020</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
@@ -169,9 +170,12 @@
                       <progress id="inf-egeprogress" class="progress is-small is-info" value="15" max="100">15%</progress>
     
                       <div class="content">
-    
-                
-                          <nav class="level is-mobile">
+
+                        <p id="inf-notify" class="has-text-centered is-size-5" style="display: none;">
+                          экзамен начался, либо уже завершился
+                        </p>
+                          
+                          <nav class="level is-mobile" id="inf-countdown">
                               <div class="level-item has-text-centered">
                                 <div>
                                   <p class="heading">Недель</p>
@@ -210,7 +214,7 @@
                   </a>
                 </div>
                 <div class="tile">
-                  <a href="phys" class="subject-link tile is-parent">
+                  <a href="phys" class="subject-link tile is-parent is-vertical">
                     <article class="tile is-child box" id="phys">
                       <p class="title">Физика</p>
                       <p class="subtitle">13 июля</p>
@@ -257,13 +261,52 @@
                     </article>
                   </a>
                   
-                  <div class="subject-link tile is-parent is-vertical">
-                    <article class="tile is-child box">
-                      <p class="title">Патч</p>
-                      <p class="subtitle">пока больше ничего не сделали</p>
+                  <a href="phys" class="subject-link tile is-parent is-vertical">
+                    <article class="tile is-child box" id="phys">
+                      <p class="title">Обществознание</p>
+                      <p class="subtitle">16 июля</p>
+                      <progress id="soc-egeprogress" class="progress is-small is-warning" value="15" max="100">15%</progress>
+    
+                      <div class="content">
+    
+                
+                          <nav class="level is-mobile">
+                              <div class="level-item has-text-centered">
+                                <div>
+                                  <p class="heading">Недель</p>
+                                  <p class="title title-cd" id="soc-countdown-weeks"></p>
+                                </div>
+                              </div>
+                              <div class="level-item has-text-centered">
+                                <div>
+                                  <p class="heading">Дней</p>
+                                  <p class="title title-cd" id="soc-countdown-days"></p>
+                                </div>
+                              </div>
+                              <div class="level-item has-text-centered">
+                                <div>
+                                  <p class="heading">Часов</p>
+                                  <p class="title title-cd" id="soc-countdown-hours"></p>
+                                </div>
+                              </div>
+                              <div class="level-item has-text-centered">
+                                <div>
+                                  <p class="heading">Минут</p>
+                                  <p class="title title-cd" id="soc-countdown-minutes"></p>
+                                </div>
+                              </div>
+                              <div class="level-item has-text-centered">
+                                  <div>
+                                    <p class="heading">Секунд</p>
+                                    <p class="title title-cd" id="soc-countdown-seconds"></p>
+                                  </div>
+                                </div>
+                            </nav>
+              
+    
+                      </div>
                     </article>
-                    
-                  </div>
+                  </a>
                   
                 </div>
               </div>
@@ -371,27 +414,371 @@
             </div>
        
             
-            <!--
+            
             <div class="tile is-ancestor">
-              <div class="tile is-parent">
-                <article class="tile is-child box">
-                  <p class="title">География</p>
-                  <p class="subtitle">With some content</p>
+              <a class="tile is-parent">
+                <article class="tile is-child box" id="bio">
+                  <p class="title">Биология</p>
+                  <p class="subtitle">20 июля</p>
+                  <progress id="bio-egeprogress" class="progress is-small is-success" value="15" max="100">15%</progress>
+
+                  <div class="content">
+
+            
+                      <nav class="level is-mobile">
+                          <div class="level-item has-text-centered">
+                            <div>
+                              <p class="heading">Недель</p>
+                              <p class="title title-cd" id="bio-countdown-weeks"></p>
+                            </div>
+                          </div>
+                          <div class="level-item has-text-centered">
+                            <div>
+                              <p class="heading">Дней</p>
+                              <p class="title title-cd" id="bio-countdown-days"></p>
+                            </div>
+                          </div>
+                          <div class="level-item has-text-centered">
+                            <div>
+                              <p class="heading">Часов</p>
+                              <p class="title title-cd" id="bio-countdown-hours"></p>
+                            </div>
+                          </div>
+                          <div class="level-item has-text-centered">
+                            <div>
+                              <p class="heading">Минут</p>
+                              <p class="title title-cd" id="bio-countdown-minutes"></p>
+                            </div>
+                          </div>
+                          <div class="level-item has-text-centered">
+                              <div>
+                                <p class="heading">Секунд</p>
+                                <p class="title title-cd" id="bio-countdown-seconds"></p>
+                              </div>
+                            </div>
+                        </nav>
+          
+
+                  </div>
+                </article>
+              </a>
+              <a class="tile is-parent is-8">
+                <article class="tile is-child box" id="chem">
+                  <p class="title">Химия</p>
+                  <p class="subtitle">16 июля</p>
+                  <progress id="chem-egeprogress" class="progress is-small is-primary" value="15" max="100">15%</progress>
+
+                  <div class="content">
+
+            
+                      <nav class="level is-mobile">
+                          <div class="level-item has-text-centered">
+                            <div>
+                              <p class="heading">Недель</p>
+                              <p class="title title-cd" id="chem-countdown-weeks"></p>
+                            </div>
+                          </div>
+                          <div class="level-item has-text-centered">
+                            <div>
+                              <p class="heading">Дней</p>
+                              <p class="title title-cd" id="chem-countdown-days"></p>
+                            </div>
+                          </div>
+                          <div class="level-item has-text-centered">
+                            <div>
+                              <p class="heading">Часов</p>
+                              <p class="title title-cd" id="chem-countdown-hours"></p>
+                            </div>
+                          </div>
+                          <div class="level-item has-text-centered">
+                            <div>
+                              <p class="heading">Минут</p>
+                              <p class="title title-cd" id="chem-countdown-minutes"></p>
+                            </div>
+                          </div>
+                          <div class="level-item has-text-centered">
+                              <div>
+                                <p class="heading">Секунд</p>
+                                <p class="title title-cd" id="chem-countdown-seconds"></p>
+                              </div>
+                            </div>
+                        </nav>
+          
+
+                  </div>
+                </article>
+              </a>
+            </div>
+
+
+            <div class="tile is-ancestor">
+              <div style="cursor: pointer;" class="subject-link tile is-parent">
+                <article class="tile is-child box" id="lang">
+                  <div onclick="lang20();">
+                  <p class="title">Иностранные языки</p>
+                  <p class="subtitle">20 июля</p>
+
+                  <progress id="lang20-egeprogress" class="progress is-small is-danger" value="15" max="100">15%</progress>
+    
+                      <div class="content">
+    
+                
+                          <nav class="level is-mobile">
+                              <div class="level-item has-text-centered">
+                                <div>
+                                  <p class="heading">Недель</p>
+                                  <p class="title title-cd" id="lang20-countdown-weeks"></p>
+                                </div>
+                              </div>
+                              <div class="level-item has-text-centered">
+                                <div>
+                                  <p class="heading">Дней</p>
+                                  <p class="title title-cd" id="lang20-countdown-days"></p>
+                                </div>
+                              </div>
+                              <div class="level-item has-text-centered">
+                                <div>
+                                  <p class="heading">Часов</p>
+                                  <p class="title title-cd" id="lang20-countdown-hours"></p>
+                                </div>
+                              </div>
+                              <div class="level-item has-text-centered">
+                                <div>
+                                  <p class="heading">Минут</p>
+                                  <p class="title title-cd" id="lang20-countdown-minutes"></p>
+                                </div>
+                              </div>
+                              <div class="level-item has-text-centered">
+                                  <div>
+                                    <p class="heading">Секунд</p>
+                                    <p class="title title-cd" id="lang20-countdown-seconds"></p>
+                                  </div>
+                                </div>
+                            </nav>
+              
+    
+                      </div>
+
+                  </div>
+
+
+                  
+
+                      <div onclick="lang22();" style="cursor: pointer;">
+                        <br><br>
+
+                      <p class="subtitle">22 июля</p>
+
+                      <progress id="lang22-egeprogress" class="progress is-small is-danger" value="15" max="100">15%</progress>
+        
+                          <div class="content">
+        
+                    
+                              <nav class="level is-mobile">
+                                  <div class="level-item has-text-centered">
+                                    <div>
+                                      <p class="heading">Недель</p>
+                                      <p class="title title-cd" id="lang22-countdown-weeks"></p>
+                                    </div>
+                                  </div>
+                                  <div class="level-item has-text-centered">
+                                    <div>
+                                      <p class="heading">Дней</p>
+                                      <p class="title title-cd" id="lang22-countdown-days"></p>
+                                    </div>
+                                  </div>
+                                  <div class="level-item has-text-centered">
+                                    <div>
+                                      <p class="heading">Часов</p>
+                                      <p class="title title-cd" id="lang22-countdown-hours"></p>
+                                    </div>
+                                  </div>
+                                  <div class="level-item has-text-centered">
+                                    <div>
+                                      <p class="heading">Минут</p>
+                                      <p class="title title-cd" id="lang22-countdown-minutes"></p>
+                                    </div>
+                                  </div>
+                                  <div class="level-item has-text-centered">
+                                      <div>
+                                        <p class="heading">Секунд</p>
+                                        <p class="title title-cd" id="lang22-countdown-seconds"></p>
+                                      </div>
+                                    </div>
+                                </nav>
+                  
+        
+                          </div>
+
+                          
+
+                        </div>
+
+
+
+                        <div onclick="lang23();" style="cursor: pointer;">
+                          <br><br>
+  
+                        <p class="subtitle">23 июля</p>
+  
+                        <progress id="lang23-egeprogress" class="progress is-small is-danger" value="15" max="100">15%</progress>
+          
+                            <div class="content">
+          
+                      
+                                <nav class="level is-mobile">
+                                    <div class="level-item has-text-centered">
+                                      <div>
+                                        <p class="heading">Недель</p>
+                                        <p class="title title-cd" id="lang23-countdown-weeks"></p>
+                                      </div>
+                                    </div>
+                                    <div class="level-item has-text-centered">
+                                      <div>
+                                        <p class="heading">Дней</p>
+                                        <p class="title title-cd" id="lang23-countdown-days"></p>
+                                      </div>
+                                    </div>
+                                    <div class="level-item has-text-centered">
+                                      <div>
+                                        <p class="heading">Часов</p>
+                                        <p class="title title-cd" id="lang23-countdown-hours"></p>
+                                      </div>
+                                    </div>
+                                    <div class="level-item has-text-centered">
+                                      <div>
+                                        <p class="heading">Минут</p>
+                                        <p class="title title-cd" id="lang23-countdown-minutes"></p>
+                                      </div>
+                                    </div>
+                                    <div class="level-item has-text-centered">
+                                        <div>
+                                          <p class="heading">Секунд</p>
+                                          <p class="title title-cd" id="lang23-countdown-seconds"></p>
+                                        </div>
+                                      </div>
+                                  </nav>
+                    
+          
+                            </div>
+  
+                            
+  
+                          </div>
                   
                 </article>
               </div>
-              <div class="tile is-parent is-8">
-                <article class="tile is-child box">
-                  <p class="title">История</p>
-                  <p class="subtitle">With some content</p>
-                  
-                </article>
+            
+              <div class="tile is-6 is-vertical is-parent">
+                  <article class="tile is-child box" id="his" onclick="his();" style="cursor: pointer;">
+                    <p class="title">История</p>
+                    <p class="subtitle">13 июля</p>
+                    <progress id="his-egeprogress" class="progress is-small is-warning" value="15" max="100">15%</progress>
+  
+                    <div class="content">
+  
+              
+                        <nav class="level is-mobile">
+                            <div class="level-item has-text-centered">
+                              <div>
+                                <p class="heading">Недель</p>
+                                <p class="title title-cd" id="his-countdown-weeks"></p>
+                              </div>
+                            </div>
+                            <div class="level-item has-text-centered">
+                              <div>
+                                <p class="heading">Дней</p>
+                                <p class="title title-cd" id="his-countdown-days"></p>
+                              </div>
+                            </div>
+                            <div class="level-item has-text-centered">
+                              <div>
+                                <p class="heading">Часов</p>
+                                <p class="title title-cd" id="his-countdown-hours"></p>
+                              </div>
+                            </div>
+                            <div class="level-item has-text-centered">
+                              <div>
+                                <p class="heading">Минут</p>
+                                <p class="title title-cd" id="his-countdown-minutes"></p>
+                              </div>
+                            </div>
+                            <div class="level-item has-text-centered">
+                                <div>
+                                  <p class="heading">Секунд</p>
+                                  <p class="title title-cd" id="his-countdown-seconds"></p>
+                                </div>
+                              </div>
+                          </nav>
+            
+  
+                    </div>
+                  </article>
+
+                  <article class="tile is-child box" id="lit" onclick="lit();" style="cursor: pointer;">
+                    <p class="title">Литература</p>
+                    <p class="subtitle">3 июля</p>
+                    <progress id="lit-egeprogress" class="progress is-small is-danger" value="15" max="100">15%</progress>
+  
+                    <div class="content">
+  
+              
+                        <nav class="level is-mobile">
+                            <div class="level-item has-text-centered">
+                              <div>
+                                <p class="heading">Недель</p>
+                                <p class="title title-cd" id="lit-countdown-weeks"></p>
+                              </div>
+                            </div>
+                            <div class="level-item has-text-centered">
+                              <div>
+                                <p class="heading">Дней</p>
+                                <p class="title title-cd" id="lit-countdown-days"></p>
+                              </div>
+                            </div>
+                            <div class="level-item has-text-centered">
+                              <div>
+                                <p class="heading">Часов</p>
+                                <p class="title title-cd" id="lit-countdown-hours"></p>
+                              </div>
+                            </div>
+                            <div class="level-item has-text-centered">
+                              <div>
+                                <p class="heading">Минут</p>
+                                <p class="title title-cd" id="lit-countdown-minutes"></p>
+                              </div>
+                            </div>
+                            <div class="level-item has-text-centered">
+                                <div>
+                                  <p class="heading">Секунд</p>
+                                  <p class="title title-cd" id="lit-countdown-seconds"></p>
+                                </div>
+                              </div>
+                          </nav>
+            
+  
+                    </div>
+                  </article>
               </div>
             </div>
-          -->
+          
               
           </div>
         </section>
+
+        <footer class="footer mt-5" style="background-color: white;">
+          <nav class="breadcrumb is-centered mt-5" aria-label="breadcrumbs">
+            <ul>
+              <li class="is-active"><a href="/" aria-current="page">Всё сразу</a></li>
+              <li><a href="math">По отдельности</a></li>
+              <li><a href="about">О проекте</a></li>    
+              <li><a href="for-monkey">Ссылка для Вани</a></li>            
+            </ul>
+            <p class="has-text-centered mt-5">
+              Сделано мокаками в 2020 году.
+            </p>
+          </nav>
+        </footer>
 
     </body>
 
@@ -407,6 +794,21 @@
   function rus(){
     window.location.href = "rus";
   }
+
+  /* 
+  function lang20(){
+    window.location.href = "lang";
+  }
+
+  function lang22(){
+    window.location.href = "lang22";
+  }
+
+  function lang23(){
+    window.location.href = "lang23";
+  }
+
+  */
 
   $("#math").hover(
     function () {
@@ -430,7 +832,7 @@
     }
   );
 
-  $("#rus, #phys").hover(
+  $("#rus, #phys, #soc, #his").hover(
     function () {
       $(this).removeClass('box');
       $(this).addClass('notification is-warning');
@@ -441,6 +843,38 @@
     }
   );
 
+  $("#bio").hover(
+    function () {
+      $(this).removeClass('box');
+      $(this).addClass('notification is-success');
+    }, 
+    function () {
+      $(this).addClass('box');
+      $(this).removeClass('notification is-success');
+    }
+  );
+
+  $("#chem").hover(
+    function () {
+      $(this).removeClass('box');
+      $(this).addClass('notification is-primary');
+    }, 
+    function () {
+      $(this).addClass('box');
+      $(this).removeClass('notification is-primary');
+    }
+  );
+
+  $("#lang, #lit").hover(
+    function () {
+      $(this).removeClass('box');
+      $(this).addClass('notification is-danger');
+    }, 
+    function () {
+      $(this).addClass('box');
+      $(this).removeClass('notification is-danger');
+    }
+  );
 
   </script>
   
@@ -450,9 +884,6 @@
       cursor: pointer;
     }
 
-    article {
-      transition: all 0.1s ease-out;
-    }
 
     .subject-link {
       -webkit-touch-callout: none;
@@ -463,7 +894,11 @@
       user-select: none;
       -webkit-tap-highlight-color: transparent;
     }
-	  
+
+    article {
+      transition: all 0.1s ease-out;
+    }
+
     .title-cd {
       font-weight: normal;
     }
@@ -472,3 +907,5 @@
   </style>
 
 </html>
+
+<!-- а вообще по-моему, это самый пиздатый ui счетчика, который я встречал -->
