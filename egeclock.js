@@ -64,6 +64,7 @@ function Math_clockege() {
     window.setTimeout('Math_clockege()', 1);
 }
 
+/*
 
 var Inf_countDownDate = new Date("July 3, 2020 10:00:00").getTime();
 
@@ -78,7 +79,7 @@ function Inf_clockege() {
     var distance = Inf_countDownDate - now;
 
     if (distance <= 0) {
-        /*
+        
         document.getElementById("inf-countdown-weeks").innerHTML = 0; 
         document.getElementById("inf-countdown-days").innerHTML = 0; 
         document.getElementById("inf-countdown-hours").innerHTML = 0; 
@@ -86,7 +87,7 @@ function Inf_clockege() {
         document.getElementById("inf-countdown-seconds").innerHTML = 0; 
 
         document.getElementById("inf-egeprogress").value = 100;
-        */
+        
 
         document.getElementById("inf-countdown").style.display = "none";
         document.getElementById("inf-egeprogress").style.display = "none";
@@ -121,7 +122,7 @@ function Inf_clockege() {
 
     window.setTimeout('Inf_clockege()', 1);
 }
-
+*/
 
 var Rus_countDownDate = new Date("July 6, 2020 10:00:00").getTime();
 
@@ -631,6 +632,8 @@ function His_clockege() {
     window.setTimeout('His_clockege()', 1);
 }
 
+/*
+
 var Lit_countDownDate = new Date("July 3, 2020 10:00:00").getTime();
 
 var Lit_delta_startdown = Lit_countDownDate - startDate;
@@ -680,3 +683,5 @@ function Lit_clockege() {
 
     window.setTimeout('Lit_clockege()', 1);
 }
+
+*/
